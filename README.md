@@ -1,0 +1,1 @@
+A function that return a new Response from object and opts

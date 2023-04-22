@@ -1,0 +1,28 @@
+{
+  "name": "sejon",
+  "version": "1.0.0",
+  "description": "return json Response",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "'unsetted'"
+  },
+  "keywords": [
+    "fejon",
+    "server",
+    "nextjs^13",
+    "json",
+    "rest",
+    "api"
+  ],
+  "author": "Palpi Federico",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.15.13",
+    "typescript": "^5.0.4"
+  }
+}
