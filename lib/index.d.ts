@@ -12,3 +12,4 @@ type Opts = {
     };
 };
 declare function sejon(body: object, opts: Opts): Response;
+export default sejon;

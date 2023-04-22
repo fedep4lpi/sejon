@@ -1,6 +1,7 @@
 node_modules
 src
+.gitattributes
 .gitignore
+LICENSE
+README.me
 tsconfig.json
-readme.me
-license

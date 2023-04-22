@@ -22,21 +22,26 @@ function sejon(body: object, opts: Opts): Response
 
     if(opts.cookie!=undefined) {
 
-        if(opts.cookie.sameSite===undefined) opts.cookie.sameSite=true
-        if(opts.cookie.secure===undefined) opts.cookie.secure=true
-        if(opts.cookie.httpOnly===undefined) opts.cookie.httpOnly=true
+        const { cookie } = opts
+
+        if(cookie.sameSite===undefined) cookie.sameSite=true
+        if(cookie.secure===undefined) cookie.secure=true
+        if(cookie.httpOnly===undefined) cookie.httpOnly=true
 
         parsedOpts.headers['Set-Cookie'] = ''
-        +`${opts.cookie.name}=<${opts.cookie.value}>;`
-        +`Domain=<${opts.cookie.domain}>;`
-        +`Max-Age=<${opts.cookie.maxAge}>;`
-        +`Path=<${opts.cookie.path}>;`
-        +`SameSite=<${opts.cookie.sameSite?'Strict':'Lax'}>;`
-        +`${opts.cookie.secure?'Secure;':''}`
-        +`${opts.cookie.httpOnly?'HttpOnly;':''} `
+        
+        +`${cookie.name}=${cookie.value};`
+
+        +`${cookie.domain?'Domain='+cookie.domain:''}`
+        +`${cookie.maxAge?'Max-Age='+cookie.maxAge:''}`
+        +`${cookie.path?'Path='+cookie.path:''}`
+
+        +`SameSite=${cookie.sameSite?'Strict':'Lax'};`
+        +`${cookie.secure?'Secure;':''}`
+        +`${cookie.httpOnly?'HttpOnly;':''} `
     }
 
     return new Response(JSON.stringify(body), parsedOpts)
 }
 
-module.exports = sejon
+export default sejon

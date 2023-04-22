@@ -1,9 +1,10 @@
 {
   "name": "sejon",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "return json Response",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
